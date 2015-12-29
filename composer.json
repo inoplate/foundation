@@ -1,0 +1,19 @@
+{
+    "name": "increative/foundation",
+    "description": "Increative boiler plate foundation",
+    "type": "composer",
+    "license": "increative",
+    "authors": [
+        {
+            "name": "Roseffend",
+            "email": "oii@roseffendi.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Increative\\Foundation\\": "src"
+        }
+    },
+    "require": {},
+}
