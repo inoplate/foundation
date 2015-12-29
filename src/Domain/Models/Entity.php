@@ -2,8 +2,8 @@
 
 namespace Inoplate\Foundation\Domain\Models;
 
-use Inoplate\Foundation\Domain\Models\Contracts\Event;
-use Inoplate\Foundation\Domain\Models\Contracts\Entity as EntityContract;
+use Inoplate\Foundation\Domain\Contracts\Event;
+use Inoplate\Foundation\Domain\Contracts\Entity as EntityContract;
 
 abstract class Entity implements EntityContract, HasEvents
 {
