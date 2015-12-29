@@ -1,6 +1,6 @@
 <?php
 
-namespace Increative\Foundation\Domain\Contracts;
+namespace Inoplate\Foundation\Domain\Contracts;
 
 interface EntityIdentifierProvider
 {   

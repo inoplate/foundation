@@ -1,6 +1,6 @@
 <?php
 
-namespace Increative\Foundation\App\Exceptions;
+namespace Inoplate\Foundation\App\Exceptions;
 
 use Exception;
 

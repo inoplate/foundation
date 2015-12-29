@@ -1,6 +1,6 @@
 <?php
 
-namespace Increative\Foundation\App\Services\Event;
+namespace Inoplate\Foundation\App\Services\Event;
 
 interface Dispatcher
 {

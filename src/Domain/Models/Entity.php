@@ -1,9 +1,9 @@
 <?php
 
-namespace Increative\Foundation\Domain\Models;
+namespace Inoplate\Foundation\Domain\Models;
 
-use Increative\Foundation\Domain\Models\Contracts\Event;
-use Increative\Foundation\Domain\Models\Contracts\Entity as EntityContract;
+use Inoplate\Foundation\Domain\Models\Contracts\Event;
+use Inoplate\Foundation\Domain\Models\Contracts\Entity as EntityContract;
 
 abstract class Entity implements EntityContract, HasEvents
 {

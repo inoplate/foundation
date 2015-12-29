@@ -1,8 +1,8 @@
 <?php
 
-namespace Increative\Foundation\Domain\Models;
+namespace Inoplate\Foundation\Domain\Models;
 
-use Increative\Foundation\Domain\Contracts\SpecificationCandidate;
+use Inoplate\Foundation\Domain\Contracts\SpecificationCandidate;
 
 class Name extends ValueObject implements SpecificationCandidate
 {

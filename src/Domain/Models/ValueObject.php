@@ -1,6 +1,6 @@
 <?php
 
-namespace Increative\Foundation\Domain\Models;
+namespace Inoplate\Foundation\Domain\Models;
 
 abstract class ValueObject
 {

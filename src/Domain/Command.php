@@ -1,6 +1,6 @@
 <?php
 
-namespace Increative\Foundation\Domain;
+namespace Inoplate\Foundation\Domain;
 
 abstract class Commands
 {

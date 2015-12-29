@@ -1,6 +1,6 @@
 <?php
 
-namespace Increative\Foundation\Infrastructures;
+namespace Inoplate\Foundation\Infrastructures;
 
 trait GenericEloquentRepository
 {

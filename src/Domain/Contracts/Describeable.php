@@ -1,8 +1,8 @@
 <?php
 
-namespace Increative\Foundation\Domain\Contracts;
+namespace Inoplate\Foundation\Domain\Contracts;
 
-use Increative\Foundation\Domain\Models\Description;
+use Inoplate\Foundation\Domain\Models\Description;
 
 interface Describeable
 {   

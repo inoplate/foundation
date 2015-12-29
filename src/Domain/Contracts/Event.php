@@ -1,6 +1,6 @@
 <?php
 
-namespace Increative\Foundation\Domain\Contracts;
+namespace Inoplate\Foundation\Domain\Contracts;
 
 // This interface is only for marker
 interface Event{}

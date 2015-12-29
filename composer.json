@@ -1,6 +1,6 @@
 {
-    "name": "increative/foundation",
-    "description": "Increative boiler plate foundation",
+    "name": "inoplate/foundation",
+    "description": "Inoplate boiler plate foundation",
     "type": "composer",
     "license": "increative",
     "authors": [
@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Increative\\Foundation\\": "src"
+            "Inoplate\\Foundation\\": "src"
         }
     },
     "require": {}
