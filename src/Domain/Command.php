@@ -2,7 +2,7 @@
 
 namespace Inoplate\Foundation\Domain;
 
-abstract class Commands
+abstract class Command
 {
     use Getable;
 }

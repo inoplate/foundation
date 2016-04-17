@@ -1,0 +1,1 @@
+{"version":3,"sources":["inoplate.coffee"],"names":[],"mappings":"AAAA;EAAA,WAAA,CAAY,SAAA;IACR,CAAC,CAAC,GAAF,CAAM,MAAN;EADQ,CAAZ,EAII,CAAA,CAAE,4BAAF,CACE,CAAC,IADH,CACQ,SADR,CAJJ;AAAA","file":"inoplate.js","sourcesContent":["setInterval () ->\n    $.get 'ping'\n    return\n,\n    $ 'meta[name=\"ping-interval\"]'\n      .attr 'content'"],"sourceRoot":"/source/"}

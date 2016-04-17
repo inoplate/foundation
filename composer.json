@@ -15,7 +15,9 @@
             "Inoplate\\Foundation\\": "src"
         }
     },
-    "require": {},
+    "require": {
+        "alt-three/bus": "^1.0"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "0.1-dev"

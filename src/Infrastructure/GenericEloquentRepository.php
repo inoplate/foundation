@@ -1,6 +1,6 @@
 <?php
 
-namespace Inoplate\Foundation\Infrastructures;
+namespace Inoplate\Foundation\Infrastructure;
 
 trait GenericEloquentRepository
 {
@@ -99,5 +99,5 @@ trait GenericEloquentRepository
     public function findAllBy($field, $value, $columns = ['*'])
     {
         return $this->model->where($field, '=', $value)->get($columns);
-    }   
+    }
 }

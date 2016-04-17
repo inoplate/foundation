@@ -1,6 +1,6 @@
 <?php
 
-namespace Inoplate\Foundation\App\Services\Event;
+namespace Inoplate\Foundation\App\Services\Events;
 
 interface Dispatcher
 {
@@ -8,7 +8,7 @@ interface Dispatcher
      * Fire events
      * 
      * @param  array $events
-     * @return mixed
+     * @return array
      */
     public function fire($events);
 }

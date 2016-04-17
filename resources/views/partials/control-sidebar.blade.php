@@ -1,0 +1,1 @@
+@extends('inoplate-adminutes::partials.control-sidebar')
