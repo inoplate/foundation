@@ -74,10 +74,11 @@ abstract class Entity implements EntityContract, HasEvents
 
     /**
      * Convert object to array
-     * 
+     *
+     * @param  int $deep
      * @return array
      */
-    public function toArray()
+    public function toArray($deep = 1)
     {
         $return = [];
         $properties = get_object_vars($this);
@@ -85,11 +86,23 @@ abstract class Entity implements EntityContract, HasEvents
         foreach ($properties as $key => $property) {
             if((!in_array($key, $this->toArrayEscapedProperties)) && ($key != 'toArrayEscapedProperties')) {
                 if(is_array($property)) {
+                    $return[$key] = [];
                     foreach ($property as $key2 => $value) {
-                        $return[$key][$key2] = $this->getPropertyValue($value);
+                        $prop = $this->getPropertyValue($value, $deep);
+                        if( !$prop instanceof UnsetThisValue) {
+                            $return[$key][$key2] = $prop;
+                        }else {
+                            unset($return[$key][$key2]);
+                        }
                     }
                 }else {
-                    $return[$key] = $this->getPropertyValue($property);
+                    $prop = $this->getPropertyValue($property, $deep);
+
+                    if( !$prop instanceof UnsetThisValue) {
+                        $return[$key] = $prop;    
+                    }else{
+                        unset($return[$key]);
+                    }
                 }
             }
         }
@@ -97,10 +110,21 @@ abstract class Entity implements EntityContract, HasEvents
         return $return;
     }
 
-    protected function getPropertyValue($value)
+    /**
+     * Retrieve property value
+     * 
+     * @param  mixed $value
+     * @param  int $deep
+     * @return mixed
+     */
+    protected function getPropertyValue($value, $deep)
     {
         if ($value instanceof EntityContract) {
-            return $value->toArray();
+            if($deep > 0) {
+                return $value->toArray($deep - 1);
+            }else {
+                return new UnsetThisValue;
+            }
         }elseif($value instanceof ValueObject) {
             return $value->value();
         }else {

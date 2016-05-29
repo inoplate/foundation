@@ -9,6 +9,13 @@ use Inoplate\Account\Services\Permission\Collector as PermissionCollector;
 abstract class AuthServiceProvider extends ServiceProvider
 {
     /**
+     * Module name to register
+     * 
+     * @var string
+     */
+    protected $moduleName = '';
+
+    /**
      * Boot Auth
      * 
      * @param  Inoplate\Services\Permission\Collector $collector
@@ -19,7 +26,7 @@ abstract class AuthServiceProvider extends ServiceProvider
         $permissions = $this->registerPermissions();
 
         foreach ($permissions as $key => $val) {
-            $collector->collect($key, $val);
+            $collector->collect($key, $val, $this->moduleName);
         }
 
         $permissionsAliases = $this->registerPermissionsAliases();
@@ -33,10 +40,8 @@ abstract class AuthServiceProvider extends ServiceProvider
         $permisionsOverrideInterceptors = $this->registerPermissionsOverrideInterceptors();
 
         foreach ($permisionsOverrideInterceptors as $key => $value) {
-            $this->app['authis']->intercept($key, function($user, $alias) use ($value) {
-
-                return $user->check($value);
-
+            $this->app['authis']->intercept($key, function($user, $ability) use ($value) {
+                return in_array($value, $user->abilities());
             });
         }
     }

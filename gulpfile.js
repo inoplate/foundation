@@ -16,4 +16,6 @@ elixir(function(mix) {
     mix.coffee('inoplate.coffee')
        .coffee('datatables.extended.coffee');
 
+    mix.copy('resources/assets/vendor/within-viewport', 'public/vendor/within-viewport');
+
 });

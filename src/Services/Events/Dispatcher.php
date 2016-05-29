@@ -29,6 +29,10 @@ class Dispatcher implements Contract
      */
     public function fire($events)
     {
+        if(!is_array($events)) {
+            $events = [$events];
+        }
+
         $return = [];
         foreach ($events as $event) {
             $return[] = $this->dispatcher->fire($event);

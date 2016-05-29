@@ -23,9 +23,18 @@
 @section('header-meta')
     @parent
     <meta name="ping-interval" content="{{ config('inoplate.foundation.ping') }}">
+    @stack('header-meta-stack')
+@overwrite
+
+@section('header-styles')
+    <link href="/vendor/inoplate-adminutes/vendor/pace/themes/red/pace-theme-minimal.css" type="text/css" rel="stylesheet" />
+    @parent
+    @stack('header-styles-stack')
 @overwrite
 
 @section('footer-scripts')
+    <script data-pace-options='{"ajax":{"ignoreURLs":["/ping"]}}' src="/vendor/inoplate-adminutes/vendor/pace/pace.min.js" type="text/javascript"></script>
     @parent
     <script src="/vendor/inoplate-foundation/js/inoplate.js" type="text/javascript"></script>
+    @stack('footer-scripts-stack')
 @overwrite

@@ -9,6 +9,7 @@ return [
     'name' => 'Name',
     'slug' => 'Slug',
     'cancel' => 'Cancel',
+    'update' => 'Update',
     'search' => [
         'title' => 'Search',
         'placeholder' => 'Type to start..'
