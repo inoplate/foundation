@@ -18,12 +18,12 @@
     },
     "require": {
         "alt-three/bus": "^1.0",
-        "inoplate/adminutes": "0.1.x-dev",
-        "inoplate/captcha": "0.1.x-dev",
-        "inoplate/navigation": "0.1.x-dev",
-        "inoplate/widget": "0.1.x-dev",
-        "roseffendi/authis": "0.1.x-dev",
-        "roseffendi/dales": "0.1.x-dev"
+        "inoplate/adminutes": "dev-master",
+        "inoplate/captcha": "dev-master",
+        "inoplate/navigation": "dev-master",
+        "inoplate/widget": "dev-master",
+        "roseffendi/authis": "dev-master",
+        "roseffendi/dales": "dev-master"
     },
     "extra": {
         "branch-alias": {
