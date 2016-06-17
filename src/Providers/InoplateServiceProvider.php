@@ -3,9 +3,20 @@
 namespace Inoplate\Foundation\Providers;
 
 use Illuminate\Routing\Router;
+use Assets;
+use Blade;
 
 class InoplateServiceProvider extends AppServiceProvider
 {
+    /**
+     * List of providers to register
+     * 
+     * @var array
+     */
+    protected $providers = [
+        'Stolz\Assets\Laravel\ServiceProvider',
+    ];
+
     /**
      * Boot package
      * 
@@ -17,6 +28,9 @@ class InoplateServiceProvider extends AppServiceProvider
         $this->loadView();
         $this->loadConfiguration();
         $this->mapRoutes($router);
+        $this->reconfigureAsset();
+        $this->registerBladeAssetDirective();
+        $this->loadDefaultAsset();
 
         view()->composer(
             ['inoplate-foundation::partials.sidebar', 'inoplate-foundation::partials.content-header'], 
@@ -35,6 +49,60 @@ class InoplateServiceProvider extends AppServiceProvider
 
         $this->app->singleton('Inoplate\Foundation\App\Services\Bus\Dispatcher', 'Inoplate\Foundation\Services\Bus\Dispatcher');
         $this->app->singleton('Inoplate\Foundation\App\Services\Events\Dispatcher', 'Inoplate\Foundation\Services\Events\Dispatcher');
+    }
+
+    /**
+     * Load default assets
+     * 
+     * @return void
+     */
+    protected function loadDefaultAsset()
+    {
+        if(!$this->app['request']->ajax()) {
+            Assets::add('default_non_ajax');
+        }
+    }
+
+    /**
+     * Reconfigure asset
+     * 
+     * @return void
+     */
+    protected function reconfigureAsset()
+    {
+        $configuredAssetConfig = $this->app['config']->get('assets', []);
+        $foundationAssetConfig = $this->app['config']->get('inoplate.foundation.assets', []);
+        $assetConfig = array_merge_recursive($configuredAssetConfig, $foundationAssetConfig);
+
+        Assets::config($assetConfig);
+    }
+
+    /**
+     * Register blade asset directive
+     * 
+     * @return void
+     */
+    protected function registerBladeAssetDirective()
+    {
+        Blade::directive('addAsset', function($expression){
+            return "<?php Assets::add($expression) ?>";
+        });
+
+        Blade::directive('addCss', function($expression){
+            return "<?php Assets::addCss($expression) ?>";
+        });
+
+        Blade::directive('addJs', function($expression){
+            return "<?php Assets::addJs($expression) ?>";
+        });
+
+        Blade::directive('css', function(){
+            return "<?php echo Assets::css() ?>";
+        });
+
+        Blade::directive('js', function(){
+            return "<?php echo Assets::js() ?>";
+        });
     }
 
     /**

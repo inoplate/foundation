@@ -4,7 +4,6 @@ namespace Inoplate\Foundation\Providers;
 
 use Authis;
 use Illuminate\Support\ServiceProvider;
-use Inoplate\Account\Services\Permission\Collector as PermissionCollector;
 
 abstract class AuthServiceProvider extends ServiceProvider
 {
@@ -21,28 +20,29 @@ abstract class AuthServiceProvider extends ServiceProvider
      * @param  Inoplate\Services\Permission\Collector $collector
      * @return void
      */
-    public function boot(PermissionCollector $collector)
+    public function boot()
     {
-        $permissions = $this->registerPermissions();
-
-        foreach ($permissions as $key => $val) {
-            $collector->collect($key, $val, $this->moduleName);
-        }
-
-        $permissionsAliases = $this->registerPermissionsAliases();
-
-        foreach ($permissionsAliases as $permision => $aliases) {
-            foreach ($aliases as $alias) {
-                $this->app['authis']->alias($permision, $alias);
+        $permissions = $this->registeredPermissions();
+        foreach ($permissions as $permission) {
+            if(isset($permission['aliases'])) {
+                foreach ($permission['aliases'] as $alias) {
+                    $this->app['authis']->alias($permission['name'], $alias);
+                }
+                unset($permission['aliases']);
             }
-        }
 
-        $permisionsOverrideInterceptors = $this->registerPermissionsOverrideInterceptors();
+            if(isset($permission['interceptors'])) {
+                foreach($permission['interceptors'] as $interceptor) {
+                    $this->app['authis']->intercept($permission['name'], function($user, $ability) use ($interceptor) {
+                        return in_array($interceptor, $user->abilities());
+                    });
+                }
 
-        foreach ($permisionsOverrideInterceptors as $key => $value) {
-            $this->app['authis']->intercept($key, function($user, $ability) use ($value) {
-                return in_array($value, $user->abilities());
-            });
+                unset($permission['interceptors']);
+            }
+
+            $permission['module'] = $this->moduleName;
+            $this->app['permission.store']->register($permission);
         }
     }
 
@@ -54,31 +54,11 @@ abstract class AuthServiceProvider extends ServiceProvider
     public function register(){}
 
     /**
-     * Register permisions
+     * Register permissions
      * 
      * @return array
      */
-    protected function registerPermissions()
-    {
-        return [];
-    }
-
-    /**
-     * Register permissions aliases
-     * 
-     * @return array
-     */
-    protected function registerPermissionsAliases()
-    {
-        return [];
-    }
-
-    /**
-     * Register permissions overrides interceptors
-     * 
-     * @return array
-     */
-    protected function registerPermissionsOverrideInterceptors()
+    protected function registeredPermissions()
     {
         return [];
     }

@@ -1,5 +1,8 @@
 setInterval () ->
-    $.get '/ping'
+    Pace.ignore () ->
+        $.get '/ping'
+        return
+
     return
 ,
     $ 'meta[name="ping-interval"]'

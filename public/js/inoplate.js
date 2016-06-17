@@ -2,7 +2,9 @@
   var isLocalStorageSupported;
 
   setInterval(function() {
-    $.get('/ping');
+    Pace.ignore(function() {
+      $.get('/ping');
+    });
   }, $('meta[name="ping-interval"]').attr('content'));
 
   window.getLocalStorage = (function(_this) {

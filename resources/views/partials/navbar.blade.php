@@ -14,3 +14,7 @@
 @section('site-title-mini')
     <b>{!! config('inoplate.foundation.site.short_name') !!}</b>
 @endsection
+
+@section('navbar-custom-menu')
+    @include('inoplate-notification::notifications.navbar')
+@endsection

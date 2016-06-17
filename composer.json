@@ -23,7 +23,8 @@
         "inoplate/navigation": "dev-master",
         "inoplate/widget": "dev-master",
         "roseffendi/authis": "dev-master",
-        "roseffendi/dales": "dev-master"
+        "roseffendi/dales": "dev-master",
+        "stolz/assets": "^0.1.9"
     },
     "extra": {
         "branch-alias": {
