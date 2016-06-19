@@ -1,11 +1,12 @@
 <?php
 
-namespace Inoplate\Foundation\Infrastructures;
+namespace Inoplate\Foundation\Infrastructure;
 
-trait GenericEloquentRepository
+abstract class EloquentRepository
 {
     /**
      * Retrieve eloquent model
+     * 
      * @return Illuminate\Database\Eloquent\Model
      */
     public function getModel()
@@ -15,6 +16,7 @@ trait GenericEloquentRepository
 
     /**
      * Retrieve all record
+     * 
      * @param  array  $columns
      * @return mixed
      */
@@ -25,6 +27,7 @@ trait GenericEloquentRepository
 
     /**
      * Paginate record
+     * 
      * @param  integer $perPage
      * @param  array   $columns
      * @return mixed
@@ -36,6 +39,7 @@ trait GenericEloquentRepository
 
     /**
      * Create new record
+     * 
      * @param  array  $data
      * @return mixed
      */
@@ -46,6 +50,7 @@ trait GenericEloquentRepository
 
     /**
      * Update record
+     * 
      * @param  array  $data
      * @param  mixed  $id
      * @param  string $attributes
@@ -58,6 +63,7 @@ trait GenericEloquentRepository
 
     /**
      * Delete record
+     * 
      * @param  mixed $id
      * @return void
      */
@@ -68,6 +74,7 @@ trait GenericEloquentRepository
 
     /**
      * Find record by id
+     * 
      * @param  mixed $id
      * @param  array  $columns
      * @return mixed
@@ -79,6 +86,7 @@ trait GenericEloquentRepository
 
     /**
      * Find record by given field
+     * 
      * @param  string $field
      * @param  mixed  $value
      * @param  array  $columns
@@ -91,6 +99,7 @@ trait GenericEloquentRepository
 
     /**
      * Retrieve all records by given field
+     * 
      * @param  string $field
      * @param  mixed $value
      * @param  array  $columns
@@ -99,5 +108,16 @@ trait GenericEloquentRepository
     public function findAllBy($field, $value, $columns = ['*'])
     {
         return $this->model->where($field, '=', $value)->get($columns);
-    }   
+    }
+
+    /**
+     * Convert result to domain model
+     * 
+     * @param  Model $result
+     * @return array|Entity
+     */
+    public function toDomainModel($result)
+    {
+        return $result ? $result->toArray() : $result;
+    }
 }

@@ -1,8 +1,9 @@
 {
     "name": "inoplate/foundation",
     "description": "Inoplate boiler plate foundation",
+    "keywords": ["laravel", "inoplate", "foundation"],
     "type": "composer",
-    "license": "increative",
+    "license": "MIT",
     "authors": [
         {
             "name": "Roseffendi",
@@ -15,7 +16,16 @@
             "Inoplate\\Foundation\\": "src"
         }
     },
-    "require": {},
+    "require": {
+        "alt-three/bus": "^1.0",
+        "inoplate/adminutes": "dev-master",
+        "inoplate/captcha": "dev-master",
+        "inoplate/navigation": "dev-master",
+        "inoplate/widget": "dev-master",
+        "roseffendi/authis": "dev-master",
+        "roseffendi/dales": "dev-master",
+        "stolz/assets": "^0.1.9"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "0.1-dev"

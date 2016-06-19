@@ -1,0 +1,933 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "5b0e87437186110aed3e23fbf133e0cb",
+    "content-hash": "6e59f52117af80e4eb30766dc1a59352",
+    "packages": [
+        {
+            "name": "alt-three/bus",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AltThree/Bus.git",
+                "reference": "4f29669e38d3fee90f199f641f5da3aae49f3115"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AltThree/Bus/zipball/4f29669e38d3fee90f199f641f5da3aae49f3115",
+                "reference": "4f29669e38d3fee90f199f641f5da3aae49f3115",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "5.2.*",
+                "illuminate/contracts": "5.2.*",
+                "illuminate/pipeline": "5.2.*",
+                "illuminate/support": "5.2.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "graham-campbell/testbench-core": "^1.1",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AltThree\\Bus\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "James Brooks",
+                    "email": "james@alt-three.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                },
+                {
+                    "name": "Joseph Cohen",
+                    "email": "joe@alt-three.com"
+                }
+            ],
+            "description": "An improved command bus for Laravel 5.2",
+            "keywords": [
+                "Alt Three",
+                "bus",
+                "command",
+                "command bus",
+                "job"
+            ],
+            "time": "2016-01-05 11:01:26"
+        },
+        {
+            "name": "dapphp/securimage",
+            "version": "3.6.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dapphp/securimage.git",
+                "reference": "2ed50264ae5541fec8d8c79e4c9b6235a7cfd506"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dapphp/securimage/zipball/2ed50264ae5541fec8d8c79e4c9b6235a7cfd506",
+                "reference": "2ed50264ae5541fec8d8c79e4c9b6235a7cfd506",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=5.2.0"
+            },
+            "suggest": {
+                "ext-pdo": "For database storage support",
+                "ext-pdo_mysql": "For MySQL database support",
+                "ext-pdo_sqlite": "For SQLite3 database support"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "securimage.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Drew Phillips",
+                    "email": "drew@drew-phillips.com"
+                }
+            ],
+            "description": "PHP CAPTCHA Library",
+            "homepage": "https://www.phpcaptcha.org",
+            "keywords": [
+                "captcha",
+                "security"
+            ],
+            "time": "2016-03-04 21:08:00"
+        },
+        {
+            "name": "doctrine/inflector",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/inflector.git",
+                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/90b2128806bfde671b6952ab8bea493942c1fdae",
+                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\Inflector\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Common String Manipulations with regard to casing and singular/plural rules.",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "inflection",
+                "pluralize",
+                "singularize",
+                "string"
+            ],
+            "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "google/recaptcha",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/google/recaptcha.git",
+                "reference": "f3390c376129f84d22734df1f94cc7db25006bbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/google/recaptcha/zipball/f3390c376129f84d22734df1f94cc7db25006bbc",
+                "reference": "f3390c376129f84d22734df1f94cc7db25006bbc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.5.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ReCaptcha\\": "src/ReCaptcha"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Client library for reCAPTCHA, a free service that protect websites from spam and abuse.",
+            "homepage": "http://www.google.com/recaptcha/",
+            "keywords": [
+                "Abuse",
+                "captcha",
+                "recaptcha",
+                "spam"
+            ],
+            "time": "2015-12-28 18:03:30"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "58828615f7bb87013ce6365e9b1baa08580c7fc8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/58828615f7bb87013ce6365e9b1baa08580c7fc8",
+                "reference": "58828615f7bb87013ce6365e9b1baa08580c7fc8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "PSR-7 message implementation",
+            "keywords": [
+                "http",
+                "message",
+                "stream",
+                "uri"
+            ],
+            "time": "2016-06-07 17:55:54"
+        },
+        {
+            "name": "illuminate/container",
+            "version": "5.2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/container.git",
+                "reference": "17192553b2d14baa0af98ff2ff77a3f91ab06232"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/17192553b2d14baa0af98ff2ff77a3f91ab06232",
+                "reference": "17192553b2d14baa0af98ff2ff77a3f91ab06232",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "5.2.*",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Container\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "The Illuminate Container package.",
+            "homepage": "http://laravel.com",
+            "time": "2015-12-23 01:00:15"
+        },
+        {
+            "name": "illuminate/contracts",
+            "version": "5.2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/contracts.git",
+                "reference": "65ba0830f51da1cbaa1df38ff955c9df228daf7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/65ba0830f51da1cbaa1df38ff955c9df228daf7f",
+                "reference": "65ba0830f51da1cbaa1df38ff955c9df228daf7f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Contracts\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "The Illuminate Contracts package.",
+            "homepage": "http://laravel.com",
+            "time": "2015-12-19 14:25:38"
+        },
+        {
+            "name": "illuminate/pipeline",
+            "version": "5.2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/pipeline.git",
+                "reference": "0ba4095c46fdc26da52811395e94f49f0b68b896"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/pipeline/zipball/0ba4095c46fdc26da52811395e94f49f0b68b896",
+                "reference": "0ba4095c46fdc26da52811395e94f49f0b68b896",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "5.2.*",
+                "illuminate/support": "5.2.*",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Pipeline\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "The Illuminate Pipeline package.",
+            "homepage": "http://laravel.com",
+            "time": "2015-12-10 18:01:38"
+        },
+        {
+            "name": "illuminate/support",
+            "version": "5.2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/support.git",
+                "reference": "9b0bf9de6deab284958df1738c427377ed23546b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/9b0bf9de6deab284958df1738c427377ed23546b",
+                "reference": "9b0bf9de6deab284958df1738c427377ed23546b",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/inflector": "~1.0",
+                "ext-mbstring": "*",
+                "illuminate/contracts": "5.2.*",
+                "php": ">=5.5.9"
+            },
+            "suggest": {
+                "illuminate/filesystem": "Required to use the composer class (5.2.*).",
+                "jeremeamia/superclosure": "Required to be able to serialize closures (~2.2).",
+                "paragonie/random_compat": "Provides a compatible interface like PHP7's random_bytes() in PHP 5 projects (~1.1).",
+                "symfony/polyfill-php56": "Required to use the hash_equals function on PHP 5.5 (~1.0).",
+                "symfony/process": "Required to use the composer class (2.8.*|3.0.*).",
+                "symfony/var-dumper": "Improves the dd function (2.8.*|3.0.*)."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Support\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "The Illuminate Support package.",
+            "homepage": "http://laravel.com",
+            "time": "2015-12-29 14:47:47"
+        },
+        {
+            "name": "inoplate/adminutes",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inoplate/adminutes.git",
+                "reference": "6b49e1d05a9a32388b3991592c2c74dcc3c1b18e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inoplate/adminutes/zipball/6b49e1d05a9a32388b3991592c2c74dcc3c1b18e",
+                "reference": "6b49e1d05a9a32388b3991592c2c74dcc3c1b18e",
+                "shasum": ""
+            },
+            "type": "composer",
+            "autoload": {
+                "psr-4": {
+                    "Inoplate\\Adminutes\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The larave adminLTE wrapper",
+            "keywords": [
+                "AdminLTE",
+                "admin template",
+                "inoplate",
+                "laravel"
+            ],
+            "time": "2016-04-17 10:12:16"
+        },
+        {
+            "name": "inoplate/captcha",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inoplate/captcha.git",
+                "reference": "3c0712b78303286929affd09d70d8994179bb6c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inoplate/captcha/zipball/3c0712b78303286929affd09d70d8994179bb6c0",
+                "reference": "3c0712b78303286929affd09d70d8994179bb6c0",
+                "shasum": ""
+            },
+            "require": {
+                "dapphp/securimage": "^3.6",
+                "google/recaptcha": "~1.1",
+                "intervention/image": "^2.3"
+            },
+            "type": "composer",
+            "autoload": {
+                "psr-4": {
+                    "Inoplate\\Captcha\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The larave captcha/nocaptcha wrapper",
+            "keywords": [
+                "captcha",
+                "inoplate",
+                "laravel"
+            ],
+            "time": "2016-04-17 10:08:03"
+        },
+        {
+            "name": "inoplate/navigation",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inoplate/navigation.git",
+                "reference": "ebc870eec5b2fb33825170a9430b58147db04dba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inoplate/navigation/zipball/ebc870eec5b2fb33825170a9430b58147db04dba",
+                "reference": "ebc870eec5b2fb33825170a9430b58147db04dba",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "Inoplate\\Navigation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The laravel framework navigation wrapper.",
+            "keywords": [
+                "inoplate",
+                "laravel",
+                "widget"
+            ],
+            "time": "2016-04-17 10:01:59"
+        },
+        {
+            "name": "inoplate/widget",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inoplate/widget.git",
+                "reference": "660d1ec1dd48bd5045904191512c3a7f2ece559f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inoplate/widget/zipball/660d1ec1dd48bd5045904191512c3a7f2ece559f",
+                "reference": "660d1ec1dd48bd5045904191512c3a7f2ece559f",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "Inoplate\\Widget\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel framework widget wrapper.",
+            "keywords": [
+                "inoplate",
+                "laravel",
+                "widget"
+            ],
+            "time": "2016-04-17 10:01:30"
+        },
+        {
+            "name": "intervention/image",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "22088b04728a039bd1fc32f7e79a89a118b78698"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/22088b04728a039bd1fc32f7e79a89a118b78698",
+                "reference": "22088b04728a039bd1fc32f7e79a89a118b78698",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "guzzlehttp/psr7": "~1.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.2",
+                "phpunit/phpunit": "3.*"
+            },
+            "suggest": {
+                "ext-gd": "to use GD library based image processing.",
+                "ext-imagick": "to use Imagick based image processing.",
+                "intervention/imagecache": "Caching extension for the Intervention Image library"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src/Intervention/Image"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@olivervogel.net",
+                    "homepage": "http://olivervogel.net/"
+                }
+            ],
+            "description": "Image handling and manipulation library with support for Laravel integration",
+            "homepage": "http://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "laravel",
+                "thumbnail",
+                "watermark"
+            ],
+            "time": "2016-04-26 14:08:40"
+        },
+        {
+            "name": "mrclay/minify",
+            "version": "2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mrclay/minify.git",
+                "reference": "6a2995f93256a54928f7413bf26971e92ed43d2b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mrclay/minify/zipball/6a2995f93256a54928f7413bf26971e92ed43d2b",
+                "reference": "6a2995f93256a54928f7413bf26971e92ed43d2b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.2.1"
+            },
+            "require-dev": {
+                "tubalmartin/cssmin": "~2.4.8"
+            },
+            "suggest": {
+                "tubalmartin/cssmin": "Support minify with CSSMin (YUI PHP port)"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "min/lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Clay",
+                    "email": "steve@mrclay.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Minify is a PHP5 app that helps you follow several rules for client-side performance. It combines multiple CSS or Javascript files, removes unnecessary whitespace and comments, and serves them with gzip encoding and optimal client-side cache headers",
+            "homepage": "http://code.google.com/p/minify/",
+            "time": "2016-05-12 14:43:31"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
+                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2015-05-04 20:22:00"
+        },
+        {
+            "name": "roseffendi/authis",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roseffendi/authis.git",
+                "reference": "dada3317a5f1ea38f962bf5b6ab6215283c1dab3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roseffendi/authis/zipball/dada3317a5f1ea38f962bf5b6ab6215283c1dab3",
+                "reference": "dada3317a5f1ea38f962bf5b6ab6215283c1dab3",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "composer",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Roseffendi\\Authis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roseffendi",
+                    "email": "oii@roseffendi.com"
+                }
+            ],
+            "description": "Authorization system package",
+            "time": "2016-05-29 03:10:24"
+        },
+        {
+            "name": "roseffendi/dales",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roseffendi/dales.git",
+                "reference": "9feec1a78748335b4373727bd7409fed6a219789"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roseffendi/dales/zipball/9feec1a78748335b4373727bd7409fed6a219789",
+                "reference": "9feec1a78748335b4373727bd7409fed6a219789",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "composer",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Roseffendi\\Dales\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roseffendi",
+                    "email": "oii@roseffendi.com"
+                }
+            ],
+            "description": "PHP jquery datatables server side renderer",
+            "time": "2016-04-17 11:15:54"
+        },
+        {
+            "name": "stolz/assets",
+            "version": "0.1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Stolz/Assets.git",
+                "reference": "ef72724db7a5ff01e64c917461a11ae34bdeb788"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Stolz/Assets/zipball/ef72724db7a5ff01e64c917461a11ae34bdeb788",
+                "reference": "ef72724db7a5ff01e64c917461a11ae34bdeb788",
+                "shasum": ""
+            },
+            "require": {
+                "mrclay/minify": "~2.1",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "evert/phpdoc-md": "0.*",
+                "phpdocumentor/phpdocumentor": "2.*",
+                "phpunit/phpunit": "4.*",
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "suggest": {
+                "laravel/laravel": "Included ServiceProvider and Facade to work out of the box with Laravel"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stolz\\Assets\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stolz",
+                    "homepage": "https://github.com/Stolz/Assets",
+                    "role": "developer"
+                }
+            ],
+            "description": "An ultra-simple-to-use assets management library",
+            "keywords": [
+                "JS",
+                "agnostic",
+                "asset",
+                "assets",
+                "css",
+                "javascript",
+                "laravel",
+                "minify",
+                "pipeline"
+            ],
+            "time": "2016-06-07 03:13:30"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "inoplate/adminutes": 20,
+        "inoplate/captcha": 20,
+        "inoplate/navigation": 20,
+        "inoplate/widget": 20,
+        "roseffendi/authis": 20,
+        "roseffendi/dales": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
