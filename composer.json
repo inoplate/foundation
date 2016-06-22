@@ -18,7 +18,7 @@
     },
     "require": {
         "alt-three/bus": "^1.0",
-        "inoplate/adminutes": "dev-feature/initial",
+        "inoplate/adminutes": "dev-feature/intial",
         "inoplate/captcha": "dev-feature/initial",
         "inoplate/navigation": "dev-feature/initial",
         "inoplate/widget": "dev-feature/initial",
