@@ -16,15 +16,15 @@
 @endsection
 
 @section('sidebar-menu')
-     @if(isset($navigations['main']))
-        {!! $navigations['main'] !!}
+     @if(isset($menus['main']))
+        {!! $menus['main'] !!}
     @endif
     <li class="header">{{trans('inoplate-foundation::labels.navigation.plugins')}}</li>
-    @if(isset($navigations['plugin']))
-        {!! $navigations['plugin'] !!}
+    @if(isset($menus['plugin']))
+        {!! $menus['plugin'] !!}
     @endif
     <li class="header">{{trans('inoplate-foundation::labels.navigation.utilities')}}</li>
-    @if(isset($navigations['utility']))
-        {!! $navigations['utility'] !!}
+    @if(isset($menus['utility']))
+        {!! $menus['utility'] !!}
     @endif
 @endsection

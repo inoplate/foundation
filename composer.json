@@ -18,12 +18,12 @@
     },
     "require": {
         "alt-three/bus": "^1.0",
-        "inoplate/adminutes": "dev-feature/intial",
-        "inoplate/captcha": "dev-feature/initial",
-        "inoplate/navigation": "dev-feature/initial",
-        "inoplate/widget": "dev-feature/initial",
-        "roseffendi/authis": "dev-feature/initial",
-        "roseffendi/dales": "dev-feature/initial",
+        "inoplate/adminutes": "0.1.*",
+        "inoplate/captcha": "0.1.*",
+        "inoplate/navigation": "0.1.*",
+        "inoplate/widget": "0.1.*",
+        "roseffendi/authis": "0.1.*",
+        "roseffendi/dales": "0.1.*",
         "stolz/assets": "^0.1.9"
     },
     "extra": {

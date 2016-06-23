@@ -1,4 +1,7 @@
+var gulp = require("gulp");
 var elixir = require('laravel-elixir');
+var shell = require('gulp-shell');
+var task = elixir.Task;
 
 /*
  |--------------------------------------------------------------------------
@@ -11,11 +14,16 @@ var elixir = require('laravel-elixir');
  |
  */
 
+elixir.extend('publishAssets', function() {
+    new task('publishAssets', function() {
+        return gulp.src("").pipe(shell("cd ../../../ && php artisan vendor:publish --provider=\"Inoplate\\Foundation\\Providers\\InoplateServiceProvider\" --tag=public --force"));
+    }).watch("resources/assets/**");
+});
+
 elixir(function(mix) {
-
-    mix.coffee('inoplate.coffee')
-       .coffee('datatables.extended.coffee');
-
     mix.copy('resources/assets/vendor/within-viewport', 'public/vendor/within-viewport');
 
+    mix.coffee('inoplate.coffee')
+       .coffee('datatables.extended.coffee')
+       .publishAssets();
 });

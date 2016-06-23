@@ -14,7 +14,13 @@ class InoplateServiceProvider extends AppServiceProvider
      * @var array
      */
     protected $providers = [
-        'Stolz\Assets\Laravel\ServiceProvider',
+        \Stolz\Assets\Laravel\ServiceProvider::class,
+        \Roseffendi\Authis\Laravel\AuthisServiceProvider::class,
+        \Roseffendi\Dales\Laravel\DalesServiceProvider::class,
+        \Inoplate\Adminutes\AdminutesServiceProvider::class,
+        \Inoplate\Widget\WidgetServiceProvider::class,
+        \Inoplate\Navigation\NavigationServiceProvider::class,
+        \Inoplate\Captcha\CaptchaServiceProvider::class,
     ];
 
     /**
@@ -24,6 +30,7 @@ class InoplateServiceProvider extends AppServiceProvider
      */
     public function boot(Router $router)
     {
+        $this->loadPublic();
         $this->loadTranslation();
         $this->loadView();
         $this->loadConfiguration();
@@ -35,6 +42,11 @@ class InoplateServiceProvider extends AppServiceProvider
         view()->composer(
             ['inoplate-foundation::partials.sidebar', 'inoplate-foundation::partials.content-header'], 
             'Inoplate\Foundation\Http\ViewComposers\NavigationViewComposer'
+        );
+
+        view()->composer(
+            '*',
+            'Inoplate\Foundation\Http\ViewComposers\ServiceViewComposer'
         );
     }
 
@@ -103,6 +115,17 @@ class InoplateServiceProvider extends AppServiceProvider
         Blade::directive('js', function(){
             return "<?php echo Assets::js() ?>";
         });
+    }
+
+    /**
+     * Publish public assets
+     * @return void
+     */
+    protected function loadPublic()
+    {
+        $this->publishes([
+            __DIR__.'/../../public' => public_path('vendor/inoplate-foundation'),
+        ], 'public');
     }
 
     /**

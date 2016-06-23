@@ -2,7 +2,7 @@
 
 namespace Inoplate\Foundation\Http\ViewComposers;
 
-use Navigation;
+use Inoplate\Navigation\Navigation;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -27,10 +27,12 @@ class NavigationViewComposer
      * Create new NavigationViewComposer instance
      * 
      * @param Request $request
+     * @param Navigation $navigation
      */
-    public function __construct(Request $request)
+    public function __construct(Request $request, Navigation $navigation)
     {
         $this->request = $request;
+        $this->navigation = $navigation;
     }
 
     /**
@@ -40,7 +42,7 @@ class NavigationViewComposer
      */
     public function compose(View $view)
     {
-        $sections = Navigation::all();
+        $sections = $this->navigation->all();
         $served = [];
 
         foreach ($sections as $section => $menus) {
@@ -54,7 +56,7 @@ class NavigationViewComposer
 
         $this->breadcrumbs = '<ol class="breadcrumb"><i class="fa fa-map-marker"></i> '. $this->breadcrumbs .'</ol>';
 
-        $view->with('navigations', $served)
+        $view->with('menus', $served)
              ->with('breadcrumbs', $this->breadcrumbs);
     }
 

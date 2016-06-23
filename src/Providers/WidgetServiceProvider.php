@@ -2,7 +2,6 @@
 
 namespace Inoplate\Foundation\Providers;
 
-use Widget;
 use Illuminate\Support\ServiceProvider;
 
 abstract class WidgetServiceProvider extends ServiceProvider
@@ -23,7 +22,7 @@ abstract class WidgetServiceProvider extends ServiceProvider
     {
         foreach ($this->widgets as $key => $handlers) {
             foreach ($handlers as $handler) {
-                Widget::register($key, $handler);
+                $this->app['widget']->register($key, $handler);
             }             
         }
     }

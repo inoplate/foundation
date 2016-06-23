@@ -10,12 +10,14 @@ return [
         'short_name' => 'INO',
     ],
     'assets' => [
+        'js_dir' => '',
+        'css_dir' => '',
         'collections' => [
             'datatables' => [
                 'vendor/inoplate-adminutes/vendor/datatables/css/dataTables.bootstrap.min.css',
                 'vendor/inoplate-adminutes/vendor/datatables/js/jquery.dataTables.min.js',
                 'vendor/inoplate-adminutes/vendor/datatables/js/dataTables.bootstrap.min.js',
-                'vendor/inoplate-adminutes/vendor/datatables/extensions/buttons/js/dataTables.buttons.min.js',
+                'vendor/inoplate-adminutes/vendor/datatables/extensions/buttons/js/dataTables.buttons.js',
                 'vendor/inoplate-adminutes/vendor/datatables/extensions/select/js/dataTables.select.min.js',
                 'vendor/inoplate-foundation/js/datatables.extended.js',
             ],
