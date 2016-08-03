@@ -37,7 +37,7 @@ abstract class Controller extends BaseController
      * 
      * @return response
      */
-    protected function formSuccess($url, array $data = [], $status = 302)
+    protected function formSuccess($url, array $data = [], $status = 200)
     {
         if(request()->ajax()) {
             $data['next'] = $url;
