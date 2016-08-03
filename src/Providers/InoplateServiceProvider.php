@@ -15,8 +15,10 @@ class InoplateServiceProvider extends AppServiceProvider
      */
     protected $providers = [
         \Stolz\Assets\Laravel\ServiceProvider::class,
+        \AltThree\Bus\BusServiceProvider::class,
         \Roseffendi\Authis\Laravel\AuthisServiceProvider::class,
         \Roseffendi\Dales\Laravel\DalesServiceProvider::class,
+        \Inoplate\Notifier\Laravel\NotifierServiceProvider::class,
         \Inoplate\Adminutes\AdminutesServiceProvider::class,
         \Inoplate\Widget\WidgetServiceProvider::class,
         \Inoplate\Navigation\NavigationServiceProvider::class,
@@ -136,6 +138,10 @@ class InoplateServiceProvider extends AppServiceProvider
     protected function loadTranslation()
     {
         $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'inoplate-foundation');
+
+        $this->publishes([
+            __DIR__.'/../../resources/lang' => base_path('resources/lang/vendor/inoplate-foundation'),
+        ], 'lang');
     }
 
     /**

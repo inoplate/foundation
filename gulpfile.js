@@ -21,9 +21,14 @@ elixir.extend('publishAssets', function() {
 });
 
 elixir(function(mix) {
-    mix.copy('resources/assets/vendor/within-viewport', 'public/vendor/within-viewport');
+    mix.copy('resources/assets/vendor/within-viewport', 'public/vendor/within-viewport')
+       .copy('resources/assets/vendor/cldrjs/dist', 'public/vendor/cldrjs')
+       .copy('resources/assets/vendor/cldr-core/supplemental', 'public/vendor/cldrjs/cldr/json/supplemental')
+       .copy('resources/assets/vendor/cldr-numbers-full', 'public/vendor/cldrjs/cldr/json')
+       .copy('resources/assets/vendor/globalize/dist', 'public/vendor/globalize');
 
     mix.coffee('inoplate.coffee')
        .coffee('datatables.extended.coffee')
+       .coffee('number-formatter.coffee')
        .publishAssets();
 });

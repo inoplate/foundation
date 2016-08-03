@@ -1,0 +1,22 @@
+{
+  "name": "foundation",
+  "version": "1.0.0",
+  "description": "Inoplate foundation package",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inoplate/foundation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inoplate/foundation/issues"
+  },
+  "homepage": "https://github.com/inoplate/foundation#readme",
+  "dependencies": {
+    "cldr-data-downloader": "^0.2.4"
+  }
+}

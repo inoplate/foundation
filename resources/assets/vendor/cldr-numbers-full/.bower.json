@@ -1,0 +1,22 @@
+{
+  "name": "cldr-numbers-full",
+  "version": "29.0.0",
+  "dependencies": {
+    "cldr-core": "29.0.0"
+  },
+  "main": "main/**/*.json",
+  "ignore": [
+    ".gitattributes",
+    "README.md"
+  ],
+  "homepage": "https://github.com/unicode-cldr/cldr-numbers-full",
+  "_release": "29.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "29.0.0",
+    "commit": "8c7d4b1cb71ea507099e0bb66f60521d9841b08f"
+  },
+  "_source": "https://github.com/unicode-cldr/cldr-numbers-full.git",
+  "_target": "29.0.0",
+  "_originalSource": "cldr-numbers-full"
+}

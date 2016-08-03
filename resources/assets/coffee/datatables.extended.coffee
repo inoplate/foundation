@@ -110,7 +110,7 @@ $.fn.dataTable.ext.buttons.selectedSingle =
 $.fn.dataTable.ext.buttons.bulk =
     init: ( dt, node, config )->
         $node = this.node()
-        action = config.url
+
         token = $ 'meta[name="csrf-token"]'
                     .attr 'content'
 
@@ -134,7 +134,7 @@ $.fn.dataTable.ext.buttons.bulk =
 
         buttonOuterHTML = $button[0].outerHTML
 
-        $form = $ "<form method='post' action='#{action}' #{formId} class='ajax dt-draw #{formClass}'>
+        $form = $ "<form method='post' #{formId} class='ajax dt-draw #{formClass}'>
                     <input type='hidden' name='_method' value='#{method}'/>
                     <input type='hidden' name='_token' value='#{token}'/>
                     #{buttonOuterHTML}
@@ -171,9 +171,15 @@ $.fn.dataTable.ext.buttons.bulk =
         ### Listen for ajax form's events ###
 
         $form
-            .on 'ajax.form.beforeSend', (e, jqXHR, settings) ->
+            .on 'ajax.form.beforeSend', (e, jqXHR, settings) =>
                 ids = dt.settings()[0].oInit.selected.join()
-                settings.url = "#{action}/#{ids}"
+
+                if typeof config.url == 'function'
+                    action = config.url.apply(this, [ids])
+                else
+                    action = "#{config.url}/#{ids}"
+
+                settings.url = action
 
                 return
 

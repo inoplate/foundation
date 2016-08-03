@@ -94,9 +94,8 @@
 
   $.fn.dataTable.ext.buttons.bulk = {
     init: function(dt, node, config) {
-      var $button, $form, $node, action, attributes, buttonInnerHTML, buttonOuterHTML, formClass, formId, method, nodeInnerHTML, token;
+      var $button, $form, $node, attributes, buttonInnerHTML, buttonOuterHTML, formClass, formId, method, nodeInnerHTML, token;
       $node = this.node();
-      action = config.url;
       token = $('meta[name="csrf-token"]').attr('content');
       formClass = typeof config.formClass !== 'undefined' ? config.formClass : '';
       formId = typeof config.formId !== 'undefined' ? "id=" + config.formId : '';
@@ -110,7 +109,7 @@
       });
       $button.attr('data-loading-text', buttonInnerHTML + " <i class='fa fa-circle-o-notch fa-spin'></i>");
       buttonOuterHTML = $button[0].outerHTML;
-      $form = $("<form method='post' action='" + action + "' " + formId + " class='ajax dt-draw " + formClass + "'> <input type='hidden' name='_method' value='" + method + "'/> <input type='hidden' name='_token' value='" + token + "'/> " + buttonOuterHTML + " </form>");
+      $form = $("<form method='post' " + formId + " class='ajax dt-draw " + formClass + "'> <input type='hidden' name='_method' value='" + method + "'/> <input type='hidden' name='_token' value='" + token + "'/> " + buttonOuterHTML + " </form>");
       $node.replaceWith($form);
       $button = $('button', $form);
       dt.on('change', '.id-check', function() {
@@ -137,11 +136,18 @@
       $button.addClass('disabled');
 
       /* Listen for ajax form's events */
-      $form.on('ajax.form.beforeSend', function(e, jqXHR, settings) {
-        var ids;
-        ids = dt.settings()[0].oInit.selected.join();
-        settings.url = action + "/" + ids;
-      });
+      $form.on('ajax.form.beforeSend', (function(_this) {
+        return function(e, jqXHR, settings) {
+          var action, ids;
+          ids = dt.settings()[0].oInit.selected.join();
+          if (typeof config.url === 'function') {
+            action = config.url.apply(_this, [ids]);
+          } else {
+            action = config.url + "/" + ids;
+          }
+          settings.url = action;
+        };
+      })(this));
       $form.on('ajax.form.success', function() {
         dt.settings()[0].oInit.selected = [];
         setTimeout(function() {

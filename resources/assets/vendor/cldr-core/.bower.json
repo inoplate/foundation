@@ -1,0 +1,24 @@
+{
+  "name": "cldr-core",
+  "version": "29.0.0",
+  "main": [
+    "availableLocales.json",
+    "defaultContent.json",
+    "scriptMetadata.json",
+    "supplemental/*.json"
+  ],
+  "ignore": [
+    ".gitattributes",
+    "README.md"
+  ],
+  "homepage": "https://github.com/unicode-cldr/cldr-core",
+  "_release": "29.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "29.0.0",
+    "commit": "eb7ecd327d30d08d18ab0dfcc73634285641e284"
+  },
+  "_source": "https://github.com/unicode-cldr/cldr-core.git",
+  "_target": "29.0.0",
+  "_originalSource": "cldr-core"
+}

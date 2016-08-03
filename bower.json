@@ -2,6 +2,9 @@
   "name": "Inoplate foundation packages",
   "dependencies": {
     "jscroll": "~2.3.5",
-    "within-viewport": "~1.0.0"
+    "within-viewport": "~1.0.0",
+    "globalize": "~1.1.1",
+    "cldr-data": "~29.0.0",
+    "cldr-dates-full": "~29.0.0"
   }
 }
