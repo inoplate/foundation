@@ -73,7 +73,7 @@ class NavigationViewComposer
         $icon = isset($menu['attributes']['icon']) ? $menu['attributes']['icon'] :'';
 
         if(strlen($url) > 0) {
-            $active = strpos($this->request->url(), $url) !== false ? true : false;
+            $active = strpos($url, $this->request->url()) !== false ? true : false;
         }else {
             $active = false;
         }
