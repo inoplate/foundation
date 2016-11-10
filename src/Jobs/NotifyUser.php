@@ -33,12 +33,14 @@ class NotifyUser
      * @param mixed $userId
      * @param string $message
      * @param array|string $drivers
+     * @param string $url
      */
-    public function __construct($userId, $message, $drivers)
+    public function __construct($userId, $message, $drivers, $url = '')
     {
         $this->userId = $userId;
         $this->message = $message;
         $this->drivers = $drivers;
+        $this->url = $url;
     }
 
     /**
@@ -53,13 +55,14 @@ class NotifyUser
         $userId = $this->userId;
         $message = $this->message;
         $drivers = $this->drivers;
+        $url = $this->url;
 
         if(is_array($drivers)) {
             foreach ($drivers as $driver) {
-                $this->notify($notifierFactory, $driver, $userId, $message);    
+                $this->notify($notifierFactory, $driver, $userId, $message, $url);    
             }
         }else {
-            $this->notify($notifierFactory, $drivers, $userId, $message);
+            $this->notify($notifierFactory, $drivers, $userId, $message, $url);
         }
     }
 
@@ -73,8 +76,8 @@ class NotifyUser
      * 
      * @return void
      */
-    protected function notify(NotifierFactory $notifierFactory, $driver, $userId, $message)
+    protected function notify(NotifierFactory $notifierFactory, $driver, $userId, $message, $url)
     {
-        $notifierFactory->drive($driver)->notify($message, $userId);
+        $notifierFactory->drive($driver)->notify($message, $userId, $url);
     }
 }
