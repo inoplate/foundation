@@ -25,7 +25,7 @@ class NavigationViewComposer
 
     /**
      * Create new NavigationViewComposer instance
-     * 
+     *
      * @param Request $request
      * @param Navigation $navigation
      */
@@ -73,7 +73,10 @@ class NavigationViewComposer
         $icon = isset($menu['attributes']['icon']) ? $menu['attributes']['icon'] :'';
 
         if(strlen($url) > 0) {
-            $active = strpos($url, $this->request->url()) !== false ? true : false;
+            $pattern = preg_quote($url, '/') . '($|\/.{0,})';
+
+            $active = preg_match("/$pattern/", $this->request->url());
+            // $active = strpos($this->request->url(), $url) !== false ? true : false;
         }else {
             $active = false;
         }
@@ -89,7 +92,7 @@ class NavigationViewComposer
         if($this->hasChildMenu($menu)) {
             foreach ($menu['childs'] as $child) {
                 $childMenu .= $this->serveMenus($child, '', ($level + 1));
-            }            
+            }
         }
 
         if($childMenu) {
@@ -104,7 +107,7 @@ class NavigationViewComposer
             $html .= '</ul>';
             $html .= '</li>';
 
-            $this->active[$level] = false;      
+            $this->active[$level] = false;
         }else {
             if($active) {
                 $this->prependBreadcrumbs($menu, false);
