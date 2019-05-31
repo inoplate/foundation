@@ -74,6 +74,7 @@ class NavigationViewComposer
 
         if(strlen($url) > 0) {
             $pattern = preg_quote($url, '/') . '($|\/.{0,})';
+            $pattern = str_replace('https', '[http|https]', $pattern);
 
             $active = preg_match("/$pattern/", $this->request->url());
             // $active = strpos($this->request->url(), $url) !== false ? true : false;
